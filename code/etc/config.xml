@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* The MIT License (MIT)
+*
+* Copyright (c) 2015 Alan Storm
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*/
+
+/**
+ * Chaos allows a programmer the ability to assign random configuration values
+ * at runtime.
+ *
+ * @category    Ash
+ * @package     Ash_Chaos
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ */
+-->
 <config>
 	<modules>
-		<Pulsestorm_Chaos>
-			<version>0.1.0</version>
-		</Pulsestorm_Chaos>
+		<Ash_Chaos>
+			<version>1.0.0</version>
+            <ashup
+                remote="https://s3.amazonaws.com/augustash/mage/Ash_Chaos-latest.zip" />
+		</Ash_Chaos>
 	</modules>
 
     <global>
         <events>
-<!-- 
-            //resource_get_tablename
-            //core_collection_abstract_load_before
-            //core_collection_abstract_load_after
- -->
             <controller_action_predispatch>
                 <observers>
-                    <pulsestorm_chaos_main>
+                    <ash_chaos_main>
                         <type>singleton</type>
-                        <class>pulsestorm_chaos/observer</class>
+                        <class>ash_chaos/observer</class>
                         <method>setup</method>
-                    </pulsestorm_chaos_main>
+                    </ash_chaos_main>
                 </observers>
             </controller_action_predispatch>
         </events>
-        
+
         <models>
-            <pulsestorm_chaos>
-                <class>Pulsestorm_Chaos_Model</class>
-            </pulsestorm_chaos>
-        </models>            
-        
+            <ash_chaos>
+                <class>Ash_Chaos_Model</class>
+            </ash_chaos>
+        </models>
     </global>
-
-
-
-<!-- 
-	<frontend>
-		<routers>
-			<pulsestorm_chaos>
-				<use>standard</use>
-				<args>
-					<module>Pulsestorm_Chaos</module>
-					<frontName>pulsestorm_chaos</frontName>
-				</args>
-			</pulsestorm_chaos>
-		</routers>
-	</frontend>
-	<global>
-		<blocks>
-			<pulsestorm_chaos>
-				<class>Pulsestorm_Chaos_Block</class>
-			</pulsestorm_chaos>
-		</blocks>
-		<models>
-			<pulsestorm_chaos>
-				<class>Pulsestorm_Chaos_Model</class>
-			</pulsestorm_chaos>
-		</models>
-		<helpers>
-			<pulsestorm_chaos>
-				<class>Pulsestorm_Chaos_Helper</class>
-			</pulsestorm_chaos>
-		</helpers>
-	</global>
- -->
 </config>
