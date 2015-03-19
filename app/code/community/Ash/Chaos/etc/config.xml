@@ -36,9 +36,7 @@
 <config>
 	<modules>
 		<Ash_Chaos>
-			<version>1.0.0</version>
-            <ashup
-                remote="https://s3.amazonaws.com/augustash/mage/Ash_Chaos-latest.zip" />
+			<version>1.1.0</version>
 		</Ash_Chaos>
 	</modules>
 

@@ -1,4 +1,2 @@
-# Ash_Chaos Mappings
-
-Ash_Chaos.xml         app/etc/modules/Ash_Chaos.xml
-code                  app/code/community/Ash/Chaos/
+app/etc/modules/Ash_Chaos.xml   app/etc/modules/Ash_Chaos.xml
+app/code/community/Ash/Chaos/   app/code/community/Ash/Chaos/

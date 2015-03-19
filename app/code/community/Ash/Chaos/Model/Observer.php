@@ -41,6 +41,11 @@
  */
 class Ash_Chaos_Model_Observer
 {
+    /**
+     * Run switch
+     *
+     * @var boolean
+     */
     static protected $_hasRun = false;
 
     /**
@@ -75,11 +80,7 @@ class Ash_Chaos_Model_Observer
     {
         $config = Mage::getConfig();
 
-        if (!$config) {
-            return true;
-        }
-
-        if (Mage::app()->getStore()->isAdmin()) {
+        if (!$config || Mage::app()->getStore()->isAdmin()) {
             return true;
         }
 
